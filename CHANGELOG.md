@@ -5,7 +5,7 @@ All notable changes to The Gaffer are listed here.
 ## Version 1.1
 - Added a guided session timer to track training sessions
 - Timer auto-advances through each phase with a beep and vibration at every change
-- Added play/pause, skip, and back controls, plus a progress bar and "up next" line
+- Added play/pause, skip, and back controls, with a progress bar and "up next" line
 - Rest phases are flagged separately so you know when to breathe
 - Timer stays accurate even if the screen sleeps mid-session
 - Added the new app icon
