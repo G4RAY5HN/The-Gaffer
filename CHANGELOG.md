@@ -10,6 +10,7 @@ All notable changes to The Gaffer are listed here.
 - Timer stays accurate even if the screen sleeps mid-session
 - Added the new app icon
 - Improved caching so updates show up reliably
+- Bug fixes
 
 ## Version 1.0
 - Weekend training sessions: Saturday "Full Rebuild" and Sunday "Sharpener"
