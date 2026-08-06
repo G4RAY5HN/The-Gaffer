@@ -1,5 +1,5 @@
 // The Gaffer — offline service worker (unique cache name, won't clash with Touch Revival)
-const CACHE_NAME = 'gaffer-v2';
+const CACHE_NAME = 'gaffer-v3';
 const ASSETS = ['./', './index.html', './manifest.json', './icon.svg'];
 
 self.addEventListener('install', (event) => {
