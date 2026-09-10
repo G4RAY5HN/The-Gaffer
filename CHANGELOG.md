@@ -13,7 +13,7 @@ All notable changes to The Gaffer are listed here.
 - Removed the old Saturday/Sunday preset naming
 - **Notes overhaul** — expanded, colour-coded entry types (open-play goal, penalty, free-kick goal, assist, save, tackle, block, clearance, interception, skill move, nutmeg, dribble past, match note, PB, note)
 - Notes now show an **auto-tally** of your logged moments up top
-- **Edit notes** as well as delete
+- **Edit notes** as well as ability to delete
 - Timer now runs the session you build, with lock-screen catch-up and phase-change notifications that don't interfere with music
 
 ## Version 1.1
