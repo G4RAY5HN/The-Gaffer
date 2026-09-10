@@ -65,48 +65,61 @@ body{font-family:var(--sans);color:var(--ink);min-height:100vh;overflow-x:hidden
   background:rgba(255,255,255,0.2);backdrop-filter:blur(34px) saturate(1.9);-webkit-backdrop-filter:blur(34px) saturate(1.9);
   border:1px solid rgba(255,255,255,0.42);box-shadow:0 14px 40px -6px rgba(20,60,40,0.28), inset 0 1px 0 rgba(255,255,255,0.5);}
 .tab-indicator{position:absolute;top:7px;bottom:7px;left:0;border-radius:100px;background:rgba(255,255,255,0.72);box-shadow:0 4px 14px rgba(20,60,40,0.18), inset 0 1px 0 rgba(255,255,255,0.8);transition:transform .42s cubic-bezier(.34,1.4,.4,1),width .42s cubic-bezier(.34,1.4,.4,1);z-index:0;pointer-events:none;}
-.tabbtn{border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 16px;border-radius:100px;color:var(--muted);transition:color .3s;position:relative;z-index:1;min-width:64px;}
+.tabbtn{border:none;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 14px;border-radius:100px;color:var(--muted);transition:color .3s;position:relative;z-index:1;min-width:58px;}
 .tabbtn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s cubic-bezier(.34,1.4,.4,1);}
-.tabbtn .tl{font-size:0.64rem;font-weight:700;letter-spacing:0.3px;}
+.tabbtn .tl{font-size:0.62rem;font-weight:700;letter-spacing:0.3px;}
 .tabbtn.active{color:var(--turf-deep);}
 .tabbtn.active svg{transform:translateY(-1px) scale(1.12);}
 .tabbtn:active svg{transform:scale(.85);}
 
-.pack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
-.pack .chip{font-size:0.78rem;font-weight:600;color:var(--turf-deep);background:var(--glass-strong);border:1px solid var(--glass-brd);padding:7px 13px;border-radius:100px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
-.principle{margin-top:4px;font-size:0.88rem;color:var(--ink-soft);line-height:1.55;}
-.principle b{color:var(--turf);}
-.day-switch{display:flex;gap:8px;margin:18px 4px 12px;}
-.day-btn{flex:1;border:none;cursor:pointer;padding:16px 14px;border-radius:20px;text-align:left;transition:transform .2s;background:var(--glass);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-brd);box-shadow:0 6px 20px -6px var(--glass-shadow);}
-.day-btn .db-day{font-size:1.15rem;font-weight:800;letter-spacing:-0.5px;color:var(--turf-deep);}
-.day-btn .db-meta{font-size:0.74rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-top:2px;}
-.day-btn.active{background:var(--turf);box-shadow:0 10px 26px -6px rgba(26,83,54,0.5);}
-.day-btn.active .db-day{color:#fff;}
-.day-btn.active .db-meta{color:var(--volt);}
-.day-btn:active{transform:scale(.97);}
-.start-btn{width:100%;margin:0 0 18px;background:var(--volt);color:var(--turf-deep);border:none;font-weight:800;font-size:1rem;padding:15px;border-radius:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 24px -6px rgba(198,242,78,0.6);transition:transform .15s,box-shadow .2s;}
-.start-btn:hover{transform:translateY(-2px);}
-.start-btn:active{transform:scale(.98);}
-.start-btn svg{width:20px;height:20px;fill:var(--turf-deep);}
-.day-panel{display:none;}
-.day-panel.active{display:block;}
-
+/* ---- BUILDER ---- */
+.builder-label{font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--turf);margin:0 4px 10px;}
+.time-display{text-align:center;margin-bottom:8px;}
+.time-display .td-mark{display:inline-flex;align-items:flex-start;justify-content:center;line-height:1;}
+.time-display .td-num{font-size:3rem;font-weight:800;color:var(--turf-deep);letter-spacing:-2px;line-height:1;}
+.time-display .td-unit{font-size:1.4rem;color:var(--turf);font-weight:800;line-height:1;margin-top:2px;}
+.time-display .td-sub{font-size:0.9rem;color:var(--muted);font-weight:700;margin-top:6px;}
+.slider-wrap{padding:6px 4px 2px;}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:100px;background:rgba(26,83,54,0.15);outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:28px;height:28px;border-radius:50%;background:var(--turf);cursor:pointer;box-shadow:0 4px 12px rgba(26,83,54,0.5);border:3px solid #fff;}
+input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:var(--turf);cursor:pointer;border:3px solid #fff;box-shadow:0 4px 12px rgba(26,83,54,0.5);}
+.slider-ticks{position:relative;height:16px;margin-top:8px;}
+.slider-ticks span{position:absolute;transform:translateX(-50%);font-size:0.7rem;color:var(--muted);font-weight:600;white-space:nowrap;}
+.slider-ticks span:first-child{transform:none;}
+.slider-ticks span:last-child{transform:translateX(-100%);}
+.chip-grid{display:flex;flex-wrap:wrap;gap:8px;}
+.pchip{border:1.5px solid var(--glass-brd);background:rgba(255,255,255,0.4);color:var(--ink-soft);font-size:0.84rem;font-weight:600;padding:9px 14px;border-radius:100px;cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:6px;}
+.pchip:active{transform:scale(.95);}
+.pchip.on{background:var(--turf);color:#fff;border-color:var(--turf);box-shadow:0 4px 14px -4px rgba(26,83,54,0.5);}
+.pchip.balanced.on{background:var(--gold);color:var(--turf-deep);border-color:var(--gold);}
+.equip-note{font-size:0.78rem;color:var(--muted);margin:8px 4px 10px;line-height:1.4;}
+.build-go{width:100%;margin-top:4px;background:var(--volt);color:var(--turf-deep);border:none;font-weight:800;font-size:1.05rem;padding:16px;border-radius:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 24px -6px rgba(198,242,78,0.6);transition:transform .15s;}
+.build-go:active{transform:scale(.98);}
+.build-go svg{width:20px;height:20px;fill:var(--turf-deep);}
+.preview-head{display:flex;align-items:baseline;justify-content:space-between;margin:4px 4px 12px;}
+.preview-head h3{font-size:1.2rem;font-weight:800;color:var(--turf-deep);letter-spacing:-0.5px;}
+.preview-head .ph-total{font-size:0.85rem;font-weight:700;color:var(--muted);}
 .phase{position:relative;padding-left:20px;margin-bottom:12px;}
 .phase::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px;background:linear-gradient(var(--volt),var(--turf));}
 .phase-card{overflow:hidden;}
 .phase-head{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;}
 .phase-time{font-size:0.8rem;font-weight:800;color:var(--turf-deep);background:var(--volt);padding:3px 10px;border-radius:100px;white-space:nowrap;}
 .phase-time.rest{background:var(--gold);}
-.phase-name{font-weight:700;font-size:0.98rem;flex:1;color:var(--ink);}
+.phase-name{font-weight:700;font-size:0.96rem;flex:1;color:var(--ink);}
 .phase-chev{width:22px;height:22px;flex:0 0 auto;color:var(--muted);transition:transform .3s cubic-bezier(.2,.9,.25,1);}
 .phase-card.open .phase-chev{transform:rotate(90deg);}
 .phase-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
-.phase-card.open .phase-body{max-height:400px;}
+.phase-card.open .phase-body{max-height:640px;}
 .phase-body-in{padding:0 16px 16px 16px;}
 .phase-body-in p{font-size:0.88rem;color:var(--ink-soft);line-height:1.55;margin-bottom:8px;}
 .phase-body-in ul{list-style:none;}
 .phase-body-in li{font-size:0.86rem;color:var(--ink-soft);line-height:1.5;padding-left:16px;position:relative;margin-bottom:5px;}
 .phase-body-in li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--turf);}
+.start-btn{width:100%;margin:8px 0 18px;background:var(--turf);color:#fff;border:none;font-weight:800;font-size:1rem;padding:15px;border-radius:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 24px -6px rgba(26,83,54,0.55);transition:transform .15s;}
+.start-btn:active{transform:scale(.98);}
+.start-btn svg{width:20px;height:20px;fill:#fff;}
+.principle{margin-top:4px;font-size:0.86rem;color:var(--ink-soft);line-height:1.55;}
+.principle b{color:var(--turf);}
 .spacer{height:12px;}
 
 /* NOTES */
@@ -115,22 +128,24 @@ body{font-family:var(--sans);color:var(--ink);min-height:100vh;overflow-x:hidden
 .note-input,.note-select,.note-text{width:100%;font-family:var(--sans);font-size:0.92rem;color:var(--ink);background:rgba(255,255,255,0.6);border:1px solid var(--glass-brd);border-radius:14px;padding:12px 14px;outline:none;transition:border-color .2s,box-shadow .2s;}
 .note-input:focus,.note-select:focus,.note-text:focus{border-color:var(--turf);box-shadow:0 0 0 3px rgba(26,83,54,0.12);}
 .note-text{min-height:80px;resize:vertical;line-height:1.5;}
-.note-select{flex:1;min-width:130px;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236b7d73' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
-.btn-add{width:100%;background:var(--turf);color:#fff;border:none;font-weight:700;font-size:0.95rem;padding:14px;border-radius:14px;cursor:pointer;transition:transform .15s;box-shadow:0 8px 22px -6px rgba(26,83,54,0.5);}
+.note-select{flex:1;min-width:150px;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236b7d73' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
+.btn-add{flex:1;background:var(--turf);color:#fff;border:none;font-weight:700;font-size:0.95rem;padding:14px;border-radius:14px;cursor:pointer;transition:transform .15s;box-shadow:0 8px 22px -6px rgba(26,83,54,0.5);}
 .btn-add:active{transform:scale(.98);}
+.btn-cancel{background:none;border:1px solid var(--glass-brd);color:var(--muted);font-weight:700;font-size:0.9rem;padding:14px 18px;border-radius:14px;cursor:pointer;}
+.tally{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.tally-chip{font-size:0.78rem;font-weight:700;color:var(--turf-deep);background:var(--glass-strong);border:1px solid var(--glass-brd);padding:6px 12px;border-radius:100px;backdrop-filter:blur(10px);}
 .note-item{padding:16px 18px;margin-bottom:12px;position:relative;overflow:hidden;}
 .note-item .ni-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px;}
-.note-tag{font-size:0.66rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:100px;color:#fff;}
-.note-tag.freekick{background:var(--gold);}
-.note-tag.goal{background:var(--turf);}
-.note-tag.match{background:#3a7bd5;}
-.note-tag.pb{background:var(--volt);color:var(--turf-deep);}
-.note-tag.note{background:var(--muted);}
-.note-date{font-size:0.74rem;color:var(--muted);font-weight:600;}
+.note-item .ni-left{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.note-tag{font-size:0.64rem;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;padding:3px 10px;border-radius:100px;color:#fff;white-space:nowrap;}
+.note-date{font-size:0.72rem;color:var(--muted);font-weight:600;}
 .note-body{font-size:0.92rem;color:var(--ink-soft);line-height:1.55;}
-.note-del{position:absolute;top:12px;right:14px;background:none;border:none;color:var(--muted);cursor:pointer;font-size:1.1rem;line-height:1;opacity:0;transition:opacity .2s,color .2s;}
-.note-item:hover .note-del{opacity:1;}
-.note-del:hover{color:#d64545;}
+.note-actions{position:absolute;top:12px;right:14px;display:flex;gap:6px;opacity:0;transition:opacity .2s;}
+.note-item:hover .note-actions{opacity:1;}
+.note-act{background:none;border:none;cursor:pointer;color:var(--muted);font-size:0.95rem;padding:2px;}
+.note-act.edit:hover{color:var(--turf);}
+.note-act.del:hover{color:#d64545;}
+@media(hover:none){.note-actions{opacity:1;}}
 .empty{text-align:center;color:var(--muted);font-size:0.9rem;padding:30px 20px;line-height:1.5;}
 
 /* TIPS */
@@ -146,7 +161,7 @@ body{font-family:var(--sans);color:var(--ink);min-height:100vh;overflow-x:hidden
 .tipcat-chev{width:20px;height:20px;color:var(--muted);transition:transform .3s;}
 .tipcat.open .tipcat-chev{transform:rotate(90deg);}
 .tipcat-body{max-height:0;overflow:hidden;transition:max-height .4s ease;}
-.tipcat.open .tipcat-body{max-height:640px;}
+.tipcat.open .tipcat-body{max-height:700px;}
 .tipcat-body-in{padding:0 18px 16px 18px;}
 .tipcat-body-in .tip{padding:10px 0;border-top:1px solid rgba(26,83,54,0.09);}
 .tip h4{font-size:0.9rem;font-weight:700;color:var(--turf-deep);margin-bottom:3px;}
@@ -168,9 +183,8 @@ body{font-family:var(--sans);color:var(--ink);min-height:100vh;overflow-x:hidden
 .reset{margin-top:16px;background:none;border:1px solid var(--glass-brd);color:var(--muted);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;padding:9px 16px;border-radius:100px;cursor:pointer;}
 .foot{text-align:center;color:var(--ink-soft);font-size:0.8rem;line-height:1.5;margin-top:24px;opacity:0.8;}
 
-/* ===== TIMER OVERLAY ===== */
-.timer{position:fixed;inset:0;z-index:200;display:none;flex-direction:column;align-items:center;justify-content:center;padding:30px 20px;
-  background:linear-gradient(160deg,var(--turf) 0%,var(--turf-deep) 100%);color:#fff;text-align:center;}
+/* TIMER */
+.timer{position:fixed;inset:0;z-index:200;display:none;flex-direction:column;align-items:center;justify-content:center;padding:30px 20px;background:linear-gradient(160deg,var(--turf) 0%,var(--turf-deep) 100%);color:#fff;text-align:center;}
 .timer.rest-mode{background:linear-gradient(160deg,#5a4a12 0%,#3a2f08 100%);}
 .timer.active{display:flex;animation:timerIn .4s cubic-bezier(.2,.8,.2,1);}
 #timerRunning,#timerFinished{display:flex;flex-direction:column;align-items:center;width:100%;}
@@ -205,55 +219,55 @@ body{font-family:var(--sans);color:var(--ink);min-height:100vh;overflow-x:hidden
   <header class="hero">
     <span class="eyebrow"><span class="dot"></span> Your Football Companion</span>
     <h1>The <em>Gaffer</em></h1>
-    <p class="tagline">Sessions, notes, and coaching in your pocket — built around your game: a right-footed, any-flank winger with a set-piece weapon.</p>
+    <p class="tagline">Build a session around your time, your focus, and your kit — then let the timer run it. Built for your game.</p>
     <button class="install-btn" id="installBtn">⬇ Install as App</button>
   </header>
 
-  <!-- SESSIONS -->
-  <section class="page active" id="page-sessions">
-    <h2 class="tab-title">Sessions</h2>
-    <p class="tab-intro">Your weekend rebuild. Tap "Start Guided Session" to run the timer, or tap any phase to read it. Quality over speed — stop a block the moment your touch goes sloppy.</p>
+  <!-- BUILD (Sessions) -->
+  <section class="page active" id="page-build">
+    <h2 class="tab-title">Build a Session</h2>
+    <p class="tab-intro">Set your time, pick what to work on, tell it your kit — and it builds a session to fit.</p>
 
-    <div class="glass section-pad reveal">
-      <div class="pack">
-        <span class="chip">⚽ Ball (pumped)</span>
-        <span class="chip">🧱 Flat wall</span>
-        <span class="chip">💧 Water ×2</span>
-        <span class="chip">🍫 Mid-break snack</span>
-        <span class="chip">🚩 2–4 markers</span>
-        <span class="chip">👟 Boots + trainers</span>
+    <div class="glass section-pad reveal" style="margin-bottom:16px;">
+      <div class="builder-label">How long have you got?</div>
+      <div class="time-display"><div class="td-mark"><span class="td-num" id="timeNum">60</span><span class="td-unit">′</span></div><div class="td-sub" id="timeSub">1 hour</div></div>
+      <div class="slider-wrap">
+        <input type="range" id="minSlider" min="15" max="240" step="5" value="60">
+        <div class="slider-ticks" id="sliderTicks"></div>
       </div>
-      <p class="principle"><b>Baked into every session:</b> quality over speed · right foot sharp but left foot fed every block · left = cut in / right = stay wide worked into the wall reps · head up more as it goes on. <b>Post-injury:</b> warm the ankle every block, extra reps on the weaker side, respect soreness.</p>
     </div>
 
-    <div class="day-switch reveal">
-      <button class="day-btn active" data-day="sat"><div class="db-day">Saturday</div><div class="db-meta">Full Rebuild · ≈4 hr</div></button>
-      <button class="day-btn" data-day="sun"><div class="db-day">Sunday</div><div class="db-meta">Sharpener · ≈2 hr</div></button>
+    <div class="glass section-pad reveal" style="margin-bottom:16px;">
+      <div class="builder-label">What do you want to work on?</div>
+      <div class="chip-grid" id="focusChips"></div>
     </div>
 
-    <button class="start-btn reveal" id="startBtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Start Guided Session</button>
+    <div class="glass section-pad reveal" style="margin-bottom:16px;">
+      <div class="builder-label">What kit have you got?</div>
+      <p class="equip-note">Ball + wall are assumed. Tick any extras you have.</p>
+      <div class="chip-grid" id="equipChips"></div>
+    </div>
 
-    <div class="day-panel active" id="day-sat"></div>
-    <div class="day-panel" id="day-sun"></div>
+    <button class="build-go reveal" id="buildBtn"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> Build my session</button>
+
+    <div id="buildResult" style="margin-top:20px;"></div>
   </section>
 
   <!-- NOTES -->
   <section class="page" id="page-notes">
     <h2 class="tab-title">Notes</h2>
-    <p class="tab-intro">Log goals, free kicks, match notes, and PBs. Everything saves on this device automatically.</p>
+    <p class="tab-intro">Log goals, free kicks, saves, skills, PBs — anything. Saves on this device automatically.</p>
+    <div id="tally" class="tally"></div>
     <div class="glass section-pad note-form reveal">
       <div class="row">
-        <select class="note-select" id="noteType">
-          <option value="freekick">Free kick</option>
-          <option value="goal">Goal</option>
-          <option value="match">Match note</option>
-          <option value="pb">Personal best</option>
-          <option value="note">Note</option>
-        </select>
+        <select class="note-select" id="noteType"></select>
         <input class="note-input" id="noteTitle" placeholder="Title (e.g. Near-post curler)" style="flex:2;min-width:160px;">
       </div>
       <div class="row"><textarea class="note-text" id="noteBody" placeholder="What happened? Where from, technique, which corner, keeper's reaction…"></textarea></div>
-      <button class="btn-add" id="btnAddNote">Add to log</button>
+      <div class="row" style="margin-bottom:0;">
+        <button class="btn-add" id="btnAddNote">Add to log</button>
+        <button class="btn-cancel" id="btnCancelEdit" style="display:none;">Cancel</button>
+      </div>
     </div>
     <div id="notesList"></div>
   </section>
@@ -298,95 +312,349 @@ body{font-family:var(--sans);color:var(--ink);min-height:100vh;overflow-x:hidden
     <div class="timer-phasecount" id="timerPhaseCount"></div>
     <div class="timer-next" id="timerNext"></div>
     <div class="timer-controls">
-      <button class="tc-btn side" id="tcBack" title="Previous phase"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
-      <button class="tc-btn play" id="tcPlay" title="Play/Pause"><svg viewBox="0 0 24 24" id="tcPlayIcon"><path d="M6 19h4V5H6zm8-14v14h4V5z"/></svg></button>
-      <button class="tc-btn side" id="tcSkip" title="Next phase"><svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg></button>
+      <button class="tc-btn side" id="tcBack"><svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
+      <button class="tc-btn play" id="tcPlay"><svg viewBox="0 0 24 24" id="tcPlayIcon"><path d="M6 19h4V5H6zm8-14v14h4V5z"/></svg></button>
+      <button class="tc-btn side" id="tcSkip"><svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg></button>
     </div>
   </div>
   <div id="timerFinished" style="display:none;">
     <div class="timer-kicker">Session complete</div>
     <div class="timer-done">Well trained. 👏</div>
     <div class="timer-done-sub">Log your PBs in Notes and tick today in the Tracker.</div>
-    <div class="timer-controls"><button class="tc-btn play" id="tcFinishClose" style="background:var(--volt);"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#0f3a24"/></svg></button></div>
+    <div class="timer-controls"><button class="tc-btn play" id="tcFinishClose"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#0f3a24"/></svg></button></div>
   </div>
 </div>
 
 <!-- TAB BAR -->
 <nav class="tabbar" id="tabbar">
   <div class="tab-indicator" id="tabIndicator"></div>
-  <button class="tabbtn active" data-tab="sessions"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg><span class="tl">Sessions</span></button>
+  <button class="tabbtn active" data-tab="build"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span class="tl">Build</span></button>
   <button class="tabbtn" data-tab="notes"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h6"/></svg><span class="tl">Notes</span></button>
   <button class="tabbtn" data-tab="tips"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg><span class="tl">Tips</span></button>
   <button class="tabbtn" data-tab="tracker"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg><span class="tl">Tracker</span></button>
 </nav>
 
 <script>
-/* ===== SESSION DATA (durations in seconds derived from your plans) ===== */
-const SESSIONS={
-  sat:[
-    {t:'0–15′',n:'Warm-up (3 stages)',secs:900,body:'Warm up → groove technique → load under fatigue → bring it down.',pts:['Stage 1: 5 min easy jog + dynamic range — leg swings, lunges, ankle circles, calf raises. Wake the injured foot first.','Stage 2: quick feet, sidesteps, changes of direction.','Stage 3: light ball contact — sole rolls and toe taps on the spot.']},
-    {t:'15–40′',n:'Ball Mastery Circuit',secs:1500,body:'Four stations, ~6 min each.',pts:['Sole rolls & the "V" · toe taps · push-pull · stationary-ball weave.','30 sec work / 15–20 sec rest per rep.','Both feet, prioritise the injured side.']},
-    {t:'40–45′',n:'Rest + hydrate',secs:300,rest:true,body:'Short reset, sip water, shake the legs out.',pts:[]},
-    {t:'45–90′',n:'Wall: Passing & Receiving',secs:2700,body:'The core rebuild.',pts:['Ladder: two-touch → one-touch → first-touch-to-turn → aerial throw-and-kill.','Control with one foot, pass with the other.','Left = receive & come infield onto the right foot; right = open up down the line.','Add "receive on the half-turn, back foot" reps.']},
-    {t:'90–100′',n:'Rest + refuel',secs:600,rest:true,body:'Mid-session break. Snack + water. Re-warm the ankle.',pts:[]},
-    {t:'100–140′',n:'Dribbling & Finishing',secs:2400,body:'',pts:['Dribble-to-pass: cone slalom → release into wall, change direction, repeat.','Finishing: rebound and strike — alternate placement and power, both feet.','15 free kicks — recreate your top-corner strike (power, straight, no curl).']},
-    {t:'140–150′',n:'Rest',secs:600,rest:true,body:'Legs tiring; reset before the hardest block.',pts:[]},
-    {t:'150–185′',n:'Game Realism (fatigued)',secs:2100,body:'',pts:['2-second rule: control and turn inside 2 seconds.','Scan first: glance up before every first touch.','Sprint-then-control: sprint 10m, then kill the wall pass and go again.']},
-    {t:'185–210′',n:'Free Play',secs:1500,body:'',pts:['Juggling ladder: thigh → foot → thigh, then feet only, then weak foot only.','Try things — skills, first-time volleys off the wall.']},
-    {t:'210–240′',n:'Cool Down',secs:1800,body:'',pts:['5 min easy movement, then full static stretch (hold each 20–30 sec).','Ankle/foot mobility. Hydrate. Log your PBs.']}
-  ],
-  sun:[
-    {t:'0–15′',n:'Warm-up',secs:900,body:'Same 3-stage warm-up. Yesterday\'s legs need it more. Injured foot first.',pts:[]},
-    {t:'15–30′',n:'Ball Mastery',secs:900,body:'Quick close-control reboot, sharper than Saturday.',pts:['Sole rolls, toe taps, push-pull, weave. 30 sec on / 15 off.','Prioritise the injured side.']},
-    {t:'30–35′',n:'Rest',secs:300,rest:true,body:'Brief reset, sip water.',pts:[]},
-    {t:'35–75′',n:'Wall: Speed & Turns',secs:2400,body:'',pts:['Ladder at pace: one-touch at tempo → first-touch-to-turn under a 2-second clock.','Equal left cut-in / right stay-wide blocks. Control one foot, pass the other.','Add aerial throw-and-kill to finish.']},
-    {t:'75–80′',n:'Rest',secs:300,rest:true,body:'Hydrate, re-warm the ankle.',pts:[]},
-    {t:'80–105′',n:'Finishing & Free Kicks',secs:1500,body:'',pts:['Rebound finishes off the wall, both feet, alternate power/placement.','10 free kicks — recreate the straight-driven top-corner strike.']},
-    {t:'105–120′',n:'Cool Down',secs:900,body:'',pts:['Light juggling to finish on feel, then full static stretch.','Log your PBs and tick both days in the tracker.']}
-  ]
-};
+/* =========================================================
+   SECTION 1 — DRILL LIBRARY
+   Each drill: id, name, focus[], equip[] (beyond ball+wall),
+   min (secs), ideal (secs), body, pts[]
+   Focus keys: touch, shooting, passing, defending, gk, physical
+   Equip keys: cones, goal, rebounder, partner, ladder
+   ========================================================= */
+const DRILLS=[
+  // TOUCH & CONTROL
+  {id:'soleV',name:'Sole Rolls & the "V"',focus:['touch'],equip:[],min:120,ideal:240,body:'Re-grooves fine-motor control.',pts:['Roll sole-to-sole, then drag-back and push-out in a "V".','Metronome first, then speed up. Both feet, weaker side extra.']},
+  {id:'toetaps',name:'Toe Taps',focus:['touch','physical'],equip:[],min:60,ideal:180,body:'Fast feet on top of the ball.',pts:['Light, quick taps. Stay on your toes.','Great warm-up primer too.']},
+  {id:'wall2',name:'Wall Passing (2-touch)',focus:['touch','passing'],equip:[],min:180,ideal:420,body:'The single most valuable drill you own.',pts:['Control with one foot, pass with the other.','Control across your body into space, not dead underfoot.']},
+  {id:'wall1',name:'One-Touch Wall',focus:['touch','passing'],equip:[],min:120,ideal:360,body:'Return first time, alternating feet.',pts:['Start slow and close; add pace, step back.','Log your longest unbroken streak.']},
+  {id:'ftt',name:'First-Touch-to-Turn',focus:['touch','passing'],equip:[],min:180,ideal:420,body:'Rebuilds a touch that beats a defender.',pts:['Left = receive & come infield onto your right foot (your cut-in).','Right = open up down the line.','Add "receive on the half-turn, back foot".']},
+  {id:'juggle',name:'Juggling Ladder',focus:['touch'],equip:[],min:120,ideal:300,body:'Touch calibration and confidence.',pts:['Thigh → foot → thigh, then feet only, then weak foot only.','Set a daily PB and nudge it up.']},
+  {id:'aerial',name:'Aerial Control (throw & kill)',focus:['touch'],equip:[],min:120,ideal:300,body:'Killing a dropping ball dead.',pts:['Throw up (or off a high wall), cushion with foot/thigh/chest.','Cushion, don\'t block — let the surface give.']},
+  // SHOOTING & FINISHING
+  {id:'rebfin',name:'Rebound Finishing',focus:['shooting'],equip:[],min:180,ideal:420,body:'Take the wall rebound and strike.',pts:['Alternate placement and power, both feet.','Meet it early, body over it to keep it down.']},
+  {id:'fk',name:'Free Kicks',focus:['shooting'],equip:[],min:180,ideal:480,body:'Your signature weapon.',pts:['Driven: laces, straight, no curl, top corner.','Curled: across the ball, over the wall, into the corner.','Disguise the run-up so both look identical.']},
+  {id:'volley',name:'Volleys & Half-Volleys',focus:['shooting','touch'],equip:[],min:120,ideal:300,body:'Clean striking of a moving ball.',pts:['Toss off the wall, strike on the drop.','Keep the knee over the ball.']},
+  {id:'goalfin',name:'Target Finishing (goal)',focus:['shooting'],equip:['goal'],min:180,ideal:420,body:'Finish into a real goal, pick your spots.',pts:['Aim for corners; alternate near/far post.','Side-foot placement beats blasting.']},
+  // PASSING & DRIBBLING
+  {id:'slalom',name:'Cone Slalom → Pass',focus:['passing'],equip:['cones'],min:180,ideal:420,body:'Dribble the slalom, release into the wall.',pts:['Close control through the cones, accurate release.','Change direction and repeat, both feet.']},
+  {id:'d2p',name:'Dribble-to-Pass',focus:['passing'],equip:[],min:120,ideal:300,body:'Carry then release with accuracy.',pts:['Combine close control with a clean pass.','Head up before the release.']},
+  {id:'skills',name:'Skill Moves',focus:['passing','touch'],equip:[],min:120,ideal:300,body:'Beat-a-man repertoire.',pts:['Your cut-in chop, stepover-into-push, la croqueta.','Sell the fake with your hips and shoulders.']},
+  {id:'weave',name:'Stationary-Ball Weave',focus:['passing','touch'],equip:['cones'],min:120,ideal:240,body:'Tight dribbling through markers.',pts:['Small touches, both feet, keep it close.','Speed up once it\'s clean.']},
+  // DEFENDING & RECOVERY
+  {id:'jockey',name:'Jockey Footwork',focus:['defending'],equip:[],min:120,ideal:300,body:'Stay on your feet, shepherd, delay.',pts:['Small steps, side-on, show them wide/weak foot.','Never dive in — wait for the mistake.']},
+  {id:'closedown',name:'Close-Down Bursts',focus:['defending','physical'],equip:['cones'],min:120,ideal:300,body:'Press triggers and recovery.',pts:['Sprint to press, break, jockey. Repeat.','Recover goal-side each rep.']},
+  {id:'shield',name:'Shielding',focus:['defending','touch'],equip:[],min:90,ideal:240,body:'Protect the ball with your body.',pts:['Body between ball and defender.','Roll away into space when the pressure commits.']},
+  {id:'partnerdef',name:'1v1 Defending (partner)',focus:['defending'],equip:['partner'],min:180,ideal:420,body:'Live 1v1s with a partner.',pts:['Show them onto their weak foot.','Time the challenge; don\'t sell yourself.']},
+  // PARTNER DRILLS (only when a partner is available)
+  {id:'pass2p',name:'Passing & Receiving (partner)',focus:['passing','touch'],equip:['partner'],min:180,ideal:420,body:'Two-player passing reps — better than a wall.',pts:['Receive on the half-turn, back foot open.','Vary distance; one and two touch.','Left = come infield onto the right; right = open down the line.']},
+  {id:'give2go',name:'Give-and-Go (partner)',focus:['passing','physical'],equip:['partner'],min:150,ideal:360,body:'Pass, sprint, receive the return.',pts:['Sharp one-two, then burst into space.','Both sides, both feet.']},
+  {id:'crossfin',name:'Crossing & Finishing (partner)',focus:['shooting'],equip:['partner','goal'],min:180,ideal:420,body:'Partner serves, you finish.',pts:['Attack near and far post.','First-time finishes when you can.']},
+  {id:'servevolley',name:'Served Volleys (partner)',focus:['shooting','touch'],equip:['partner'],min:120,ideal:300,body:'Partner tosses, you strike on the drop.',pts:['Knee over the ball, keep it down.','Both feet.']},
+  {id:'headers',name:'Heading Duels (partner)',focus:['defending','physical'],equip:['partner'],min:120,ideal:300,body:'Contested aerial reps.',pts:['Attack the ball, time the leap.','Win your duels.']},
+  {id:'keeper1v1',name:'Shot-Stopping (partner shots)',focus:['gk'],equip:['partner'],min:180,ideal:420,body:'Partner shoots, you keep.',pts:['Set position, then react.','Parry wide when you can\'t catch.']},
+  // GOALKEEPING / REACTION
+  {id:'reactwall',name:'Wall Reaction Rebounds',focus:['gk'],equip:[],min:120,ideal:300,body:'Throw hard at the wall, react to the rebound.',pts:['Vary angle and power. Set position, then react.','Hands ready, stay light.']},
+  {id:'quickfeet',name:'Quick-Feet Reactions',focus:['gk','physical'],equip:['ladder'],min:90,ideal:240,body:'Reaction speed and footwork.',pts:['Ladder patterns, then react to a call/rebound.','Front foot, fast turnover.']},
+  {id:'catchparry',name:'Catch / Parry off Wall',focus:['gk'],equip:[],min:120,ideal:300,body:'Handling repetition.',pts:['Catch clean when you can, parry wide when you can\'t.','Get your body behind it.']},
+  // PHYSICAL / CONDITIONING
+  {id:'shuttles',name:'Shuttle Sprints',focus:['physical'],equip:['cones'],min:120,ideal:300,body:'Acceleration and change of direction.',pts:['5–10–15m out and back. Explode, decelerate, turn.','Quality over quantity.']},
+  {id:'sprintctrl',name:'Sprint-then-Control',focus:['physical','touch'],equip:[],min:120,ideal:360,body:'Match-fatigue realism.',pts:['Sprint 10m, then kill the wall pass and go again.','Keep the touch clean when tired — that\'s the point.']},
+  {id:'core',name:'Core Finisher',focus:['physical'],equip:[],min:120,ideal:240,body:'Stability and injury-proofing.',pts:['Planks, side planks, glute bridges.','Form over reps.']},
+  // REBOUNDER DRILLS (things a flat wall can't do: varied angles + aerial returns)
+  {id:'rebvolley',name:'Rebounder Aerial Control',focus:['touch'],equip:['rebounder'],min:120,ideal:300,body:'Angled rebounder pops the ball up — control it out of the air.',pts:['Cushion with thigh/chest/foot as it drops.','Reset and repeat quickly; a flat wall can\'t feed this.']},
+  {id:'rebreact',name:'Rapid Reaction Rebounds',focus:['gk','physical'],equip:['rebounder'],min:120,ideal:300,body:'Fire it in hard, react to the unpredictable return.',pts:['Vary power and angle; stay light on your feet.','React and control/catch the awkward bounce.']},
+  {id:'rebfirst',name:'First-Time Return Rally',focus:['passing','touch'],equip:['rebounder'],min:120,ideal:300,body:'Fast one-touch rallies off the tight net.',pts:['Quicker return than a wall — forces sharp feet.','Both feet, keep the rally alive.']},
+  {id:'rebhead',name:'Heading Reps (rebounder)',focus:['physical'],equip:['rebounder'],min:90,ideal:240,body:'Angled feed for repeated headers, no partner needed.',pts:['Attack the ball, head down and firm.','Reset from the pop-up return.']},
+  // --- added in v1.2: fuller bank ---
+  // touch
+  {id:'foundations',name:'Foundations (inside-inside)',focus:['touch'],equip:[],min:60,ideal:180,body:'Tap between the insides of both feet.',pts:['Quick and controlled, light on your toes.','Keep the ball central.']},
+  {id:'bells',name:'Bell Touches (front-back)',focus:['touch'],equip:[],min:60,ideal:180,body:'Push forward with the sole, pull back — "ring the bell".',pts:['Rhythmic, both feet.','Stay balanced over the ball.']},
+  {id:'halfturn',name:'Half-Turn Receiving',focus:['touch','passing'],equip:[],min:120,ideal:300,body:'Open your body as it arrives so you face forward.',pts:['Back-foot touch. Left = infield onto the right; right = down the line.','Scan before it arrives.']},
+  {id:'chestctrl',name:'Chest-to-Foot Control',focus:['touch'],equip:[],min:90,ideal:240,body:'Cushion on the chest, settle to feet.',pts:['Relax the chest, guide it down.','Reset and repeat.']},
+  {id:'thighctrl',name:'Thigh Control Reps',focus:['touch'],equip:[],min:90,ideal:240,body:'Pop it up, cushion on the thigh.',pts:['Soft surface, let it die.','Both legs.']},
+  {id:'boxctrl',name:'Tight-Space Control (box)',focus:['touch'],equip:['cones'],min:120,ideal:300,body:'Keep every touch inside a small marked square.',pts:['Small, precise touches.','Both feet, head up.']},
+  // shooting
+  {id:'cutback',name:'Cutback Finishes',focus:['shooting'],equip:['cones','goal'],min:150,ideal:360,body:'Collect at the byline cone, finish the cutback.',pts:['Side-foot to the corner.','First-time when you can.']},
+  {id:'longrange',name:'Long-Range Strikes',focus:['shooting'],equip:['goal'],min:150,ideal:360,body:'Strike from 20–25m.',pts:['Clean contact over power.','Keep it dipping under the bar.']},
+  {id:'weakfin',name:'Weak-Foot Finishing',focus:['shooting'],equip:[],min:120,ideal:300,body:'Every finish with your left only.',pts:['Placement first.','Plant foot pointed at target.']},
+  {id:'penalty',name:'Penalty Routine',focus:['shooting'],equip:['goal'],min:120,ideal:240,body:'Same run-up, pick your corner, repeat.',pts:['Commit to the corner.','Ice cold, no change of mind.']},
+  // passing / dribbling
+  {id:'fig8',name:'Figure-8 Dribbling',focus:['passing','touch'],equip:['cones'],min:120,ideal:300,body:'Weave a figure-8 around two cones.',pts:['Close control, both feet.','Speed up once clean.']},
+  {id:'gatepass',name:'Gate Passing',focus:['passing'],equip:['cones'],min:120,ideal:300,body:'Pass through a cone "gate" off the wall.',pts:['Accuracy under a target.','Weight it right every time.']},
+  {id:'longpass',name:'Long-Range Passing',focus:['passing'],equip:['cones'],min:120,ideal:300,body:'Hit a distant cone/target.',pts:['Driven and lofted.','Both feet.']},
+  {id:'speeddrib',name:'Speed Dribbling',focus:['passing','physical'],equip:['cones'],min:120,ideal:300,body:'Long touches at pace through wide cones.',pts:['Drive with the laces.','Head up between touches.']},
+  // defending
+  {id:'recovery',name:'Recovery Runs',focus:['defending','physical'],equip:['cones'],min:120,ideal:300,body:'Sprint back goal-side between cones.',pts:['Explode off the mark.','Get goal-side, then set.']},
+  {id:'slides',name:'Defensive Slides',focus:['defending'],equip:['cones'],min:90,ideal:240,body:'Shuffle laterally between cones, stay low.',pts:['Balanced, side-on.','Don\'t cross your feet.']},
+  {id:'blockclear',name:'Block & Clear',focus:['defending'],equip:[],min:90,ideal:240,body:'Body/foot behind the wall rebound, clear firmly.',pts:['Get set behind it.','Clear with purpose.']},
+  // gk
+  {id:'lowdive',name:'Low-Dive Handling',focus:['gk'],equip:[],min:120,ideal:300,body:'Soft throws low each side, collapse-dive and hold.',pts:['Lead with the hands.','Smother it, don\'t parry if you can catch.']},
+  {id:'highball',name:'High-Ball Claims',focus:['gk','physical'],equip:[],min:90,ideal:240,body:'Throw up, attack the highest point, claim.',pts:['Two hands, strong at the top.','Protect yourself with a raised knee.']},
+  // physical
+  {id:'tempo',name:'Tempo Runs',focus:['physical'],equip:['cones'],min:120,ideal:360,body:'Steady runs between wide cones to build engine.',pts:['Controlled pace, repeatable.','Nose breathing where you can.']},
+  {id:'accelladder',name:'Acceleration Ladders',focus:['physical'],equip:['ladder'],min:90,ideal:240,body:'Quick feet through the ladder into a 10m sprint.',pts:['Fast turnover, then explode out.','Reset and repeat.']},
+  {id:'plyo',name:'Plyo Bounds',focus:['physical'],equip:[],min:90,ideal:240,body:'Broad jumps / bounding for power.',pts:['Land soft, absorb.','Quality reps, full recovery.']},
+  {id:'tdrill',name:'Agility T-Drill',focus:['physical','defending'],equip:['cones'],min:120,ideal:300,body:'Sprint, shuffle, backpedal around a T of cones.',pts:['Sharp changes of direction.','Stay low on the shuffle.']},
+  {id:'rsa',name:'Repeated Sprint Ability',focus:['physical'],equip:['cones'],min:120,ideal:300,body:'6× 20m sprints on short rest.',pts:['Hold your times.','Match-fitness under fatigue.']},
+  {id:'ballcarry',name:'Ball-Carry Conditioning',focus:['physical','passing'],equip:['cones'],min:120,ideal:300,body:'Dribble hard between distant cones on the clock.',pts:['Both feet, keep it close at speed.','Beat your time.']},
+  // partner extras
+  {id:'thirdman',name:'Third-Man Movement (partner)',focus:['passing'],equip:['partner','cones'],min:150,ideal:360,body:'Combine and move to a new cone.',pts:['Work the angles.','Quick release, then move.']},
+  {id:'pressrec',name:'Press & Recover (partner)',focus:['defending','physical'],equip:['partner','cones'],min:150,ideal:360,body:'Partner drives, you press then recover.',pts:['Game-realistic transitions.','Recover goal-side each rep.']},
+  {id:'reflexvolley',name:'Reflex Volley Saves (partner)',focus:['gk'],equip:['partner'],min:120,ideal:300,body:'Partner volleys close range, pure reactions.',pts:['Set, then react.','Strong wrists.']},
+  {id:'wrestle',name:'Wrestle & Hold (partner)',focus:['physical'],equip:['partner'],min:90,ideal:240,body:'Shoulder-to-shoulder battles (controlled).',pts:['Low centre of gravity.','Hold your ground, protect the ball.']}
+];
 
-const CHEV=`<svg class="phase-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>`;
-function renderDay(key){
-  const wrap=document.getElementById('day-'+key);
-  wrap.innerHTML=SESSIONS[key].map(ph=>`
-    <div class="phase"><div class="glass-sm phase-card">
-      <div class="phase-head"><span class="phase-time${ph.rest?' rest':''}">${ph.t}</span><span class="phase-name">${ph.n}</span>${CHEV}</div>
-      <div class="phase-body"><div class="phase-body-in">${ph.body?`<p>${ph.body}</p>`:''}${ph.pts.length?`<ul>${ph.pts.map(p=>`<li>${p}</li>`).join('')}</ul>`:''}</div></div>
-    </div></div>`).join('')+'<div class="spacer"></div>';
-  wrap.querySelectorAll('.phase-card').forEach(c=>c.querySelector('.phase-head').onclick=()=>c.classList.toggle('open'));
+/* STRETCH LIBRARY — cool-down stretches chosen by the session's focus areas.
+   Always include a base set; add focus-specific stretches on top. */
+const STRETCHES={
+  base:['Calves (wall lean, back leg straight)','Hamstrings (hinge forward, soft knees)','Quads (standing, heel to glute)','Ankle rolls & foot mobility (injured side extra)'],
+  touch:['Ankle & achilles stretch (deep, controlled)','Toe/plantar stretch (kneel back gently)'],
+  shooting:['Hip flexors (kneeling lunge, hips forward)','Quads (deep, for striking leg)','Groin (butterfly / seated straddle)'],
+  passing:['Adductors/groin (side lunge)','Hip openers (figure-4 stretch)'],
+  defending:['Groin (wide side lunge)','Hamstrings (single-leg reach)','Hip rotators (seated figure-4)'],
+  gk:['Wrists & forearms (extend/flex)','Shoulders (cross-body + overhead)','Lower back (gentle twist)'],
+  physical:['Hip flexors (couch/lunge stretch)','Glutes (figure-4 or pigeon)','Lower back & spine (knees-to-chest, twist)','Full-body reach & breathe down']
+};
+function buildStretches(activeFocus){
+  const set=[...STRETCHES.base];
+  activeFocus.forEach(fk=>{ (STRETCHES[fk]||[]).forEach(s=>{ if(!set.includes(s)) set.push(s); }); });
+  return set;
 }
-renderDay('sat');renderDay('sun');
-let currentDay='sat';
-document.querySelectorAll('.day-btn').forEach(b=>{
-  b.onclick=()=>{document.querySelectorAll('.day-btn').forEach(x=>x.classList.toggle('active',x===b));currentDay=b.dataset.day;document.querySelectorAll('.day-panel').forEach(p=>p.classList.toggle('active',p.id==='day-'+currentDay));};
+
+const FOCUS_AREAS=[
+  {key:'touch',label:'Touch & control',icon:'🕹️'},
+  {key:'shooting',label:'Shooting & finishing',icon:'🥅'},
+  {key:'passing',label:'Passing & dribbling',icon:'🎨'},
+  {key:'defending',label:'Defending & recovery',icon:'🛡️'},
+  {key:'gk',label:'Goalkeeping / reactions',icon:'🧤'},
+  {key:'physical',label:'Physicality',icon:'💪'}
+];
+const EQUIP_EXTRAS=[
+  {key:'cones',label:'Cones / markers',icon:'🚩'},
+  {key:'goal',label:'A goal',icon:'🥅'},
+  {key:'rebounder',label:'Rebounder',icon:'🎯'},
+  {key:'partner',label:'A partner',icon:'👥'},
+  {key:'ladder',label:'Agility ladder',icon:'🪜'}
+];
+
+/* =========================================================
+   SECTION 2 — GENERATOR (smart scaling with minimums)
+   ========================================================= */
+function pickN(arr,n){
+  const a=[...arr];const out=[];const seen=new Set();
+  while(out.length<n && a.length){
+    const d=a.splice(Math.floor(Math.random()*a.length),1)[0];
+    if(seen.has(d.id))continue;   // bias via duplicates in pool, but never pick the same drill twice
+    seen.add(d.id);out.push(d);
+  }
+  return out;
+}
+function generateSession(totalMin, focus, equip){
+  const totalSecs=totalMin*60;
+  const balanced = !focus.length || focus.includes('balanced');
+  const activeFocus = balanced ? FOCUS_AREAS.map(f=>f.key) : focus;
+  // eligible drills = equipment satisfied (ball+wall always ok)
+  const eligible = DRILLS.filter(d=>d.equip.every(e=>equip.includes(e)));
+  // warm-up scales 5min (short sessions) → 15min (4hr), roughly linear with length
+  // 15min session ≈ 5min warm-up; 240min session ≈ 15min warm-up
+  const warmSecs = Math.round(Math.min(900, Math.max(300, 300 + (totalSecs-900)*(600/13500))));
+  const coolSecs = Math.min(600, Math.max(180, Math.round(totalSecs*0.06)));
+  // rests: none under 40min, then ~1 per 45min of main work
+  const mainSecs = Math.max(0, totalSecs - warmSecs - coolSecs);
+  const restCount = totalMin < 40 ? 0 : Math.min(3, Math.floor(mainSecs/2700));
+  const restSecs = restCount*300;
+  const workSecs = Math.max(0, mainSecs - restSecs);
+
+  // choose main-work drills from active focus areas, weighted evenly across chosen areas
+  let pool=[];
+  activeFocus.forEach(fk=>{
+    const inArea=eligible.filter(d=>d.focus.includes(fk));
+    pool=pool.concat(inArea);
+  });
+  // de-dupe
+  pool=[...new Map(pool.map(d=>[d.id,d])).values()];
+  // if a partner is available, prefer partner drills (they're more game-realistic than wall reps)
+  if(equip.includes('partner')){
+    const partnerDrills=pool.filter(d=>d.equip.includes('partner'));
+    pool=pool.concat(partnerDrills, partnerDrills);
+  }
+  // if a rebounder is available, give its drills a bump too (varied angles / aerial the wall can't)
+  if(equip.includes('rebounder')){
+    const rebDrills=pool.filter(d=>d.equip.includes('rebounder'));
+    pool=pool.concat(rebDrills);
+  }
+  // how many main drills? ~1 per 6 min of work, clamped to unique available
+  const uniqueCount=new Set(pool.map(d=>d.id)).size;
+  const nDrills=Math.max(1,Math.min(uniqueCount, Math.round(workSecs/360)));
+  const chosen=pickN(pool,nDrills);
+  // distribute workSecs across chosen drills, respecting each drill's min
+  const per=workSecs/Math.max(1,chosen.length);
+  const mainPhases=chosen.map(d=>{
+    const secs=Math.max(d.min, Math.min(d.ideal*1.5, Math.round(per)));
+    return {name:d.name,secs,body:d.body,pts:d.pts,rest:false};
+  });
+
+  // assemble: warm-up, main (with rests interleaved), cool-down
+  const phases=[];
+  // kit-aware warm-up — stages adapt to equipment (cones + ladder get more use here)
+  const warmPts=['Jog + dynamic range: leg swings, lunges, ankle circles, calf raises. Wake the injured foot first.'];
+  if(equip.includes('ladder')) warmPts.push('Agility ladder: quick feet — two-in, in-out, lateral. Fires the nervous system.');
+  if(equip.includes('cones')) warmPts.push('Cone weave + change-of-direction: jog, shuffle, sprint between markers.');
+  else warmPts.push('Quick feet & changes of direction on the spot.');
+  warmPts.push('Light ball contact: sole rolls, toe taps, a few short wall passes to switch on.');
+  if(equip.includes('cones')) warmPts.push('Finish with 2–3 dynamic sprints through a cone channel, building pace.');
+  const warmMins=Math.round(warmSecs/60);
+  phases.push({name:'Warm-up',secs:warmSecs,rest:false,body:`Prime the body (${warmMins} min), injured foot first — then build toward game pace.`,pts:warmPts});
+  // interleave rests roughly evenly
+  const gap = restCount>0 ? Math.ceil(mainPhases.length/(restCount+1)) : mainPhases.length;
+  mainPhases.forEach((p,i)=>{
+    phases.push(p);
+    if(restCount>0 && (i+1)%gap===0 && phases.filter(x=>x.rest).length<restCount){
+      phases.push({name:'Rest + hydrate',secs:300,rest:true,body:'Reset, sip water, re-warm the ankle.',pts:[]});
+    }
+  });
+  const stretchList=buildStretches(activeFocus);
+  phases.push({name:'Cool Down',secs:coolSecs,rest:false,body:'Bring it down and protect the progress — stretches targeted to what you trained. Hold each 20–30s.',pts:[...stretchList,'Hydrate. Log your PBs in Notes.']});
+
+  // normalise so total matches slider closely (adjust main phases)
+  const sum=phases.reduce((s,p)=>s+p.secs,0);
+  const diff=totalSecs-sum;
+  if(Math.abs(diff)>1 && mainPhases.length){
+    const adj=Math.round(diff/mainPhases.length);
+    phases.forEach(p=>{if(!p.rest && p.name!=='Warm-up' && p.name!=='Cool Down'){p.secs=Math.max(60,p.secs+adj);}});
+  }
+  return phases;
+}
+function fmtMin(s){const m=Math.round(s/60);return m+' min';}
+
+/* =========================================================
+   SECTION 3 — BUILDER UI
+   ========================================================= */
+const slider=document.getElementById('minSlider');
+const timeNum=document.getElementById('timeNum'),timeSub=document.getElementById('timeSub');
+function humanTime(v){
+  const h=Math.floor(v/60),m=v%60;
+  if(h===0) return `${m} minutes`;
+  const hStr=`${h} hour${h>1?'s':''}`;
+  return m===0 ? hStr : `${hStr}, ${m} minute${m>1?'s':''}`;
+}
+function updateTimeLabel(){
+  const v=+slider.value;
+  timeNum.textContent=v;              // big number = total minutes, with ′
+  timeSub.textContent=humanTime(v);   // readable "3 hours, 30 minutes"
+}
+slider.oninput=updateTimeLabel;updateTimeLabel();
+// ticks positioned at true % along the 15–240 track
+(function(){
+  const min=15,max=240,ticks=[{v:15,l:'15m'},{v:60,l:'1h'},{v:120,l:'2h'},{v:180,l:'3h'},{v:240,l:'4h'}];
+  document.getElementById('sliderTicks').innerHTML=ticks.map(t=>{
+    const pct=((t.v-min)/(max-min))*100;
+    return `<span style="left:${pct}%">${t.l}</span>`;
+  }).join('');
+})();
+
+let selFocus=[];
+const focusWrap=document.getElementById('focusChips');
+const balChip=document.createElement('button');
+balChip.className='pchip balanced on';balChip.innerHTML='⚖️ Balanced';balChip.dataset.key='balanced';
+focusWrap.appendChild(balChip);
+FOCUS_AREAS.forEach(f=>{
+  const b=document.createElement('button');b.className='pchip';b.dataset.key=f.key;b.innerHTML=`${f.icon} ${f.label}`;
+  focusWrap.appendChild(b);
+});
+focusWrap.querySelectorAll('.pchip').forEach(chip=>{
+  chip.onclick=()=>{
+    const k=chip.dataset.key;
+    if(k==='balanced'){selFocus=[];focusWrap.querySelectorAll('.pchip').forEach(c=>c.classList.toggle('on',c===chip));return;}
+    chip.classList.toggle('on');
+    selFocus=[...focusWrap.querySelectorAll('.pchip.on')].map(c=>c.dataset.key).filter(x=>x!=='balanced');
+    balChip.classList.toggle('on',selFocus.length===0);
+  };
+});
+let selEquip=[];
+const equipWrap=document.getElementById('equipChips');
+EQUIP_EXTRAS.forEach(e=>{
+  const b=document.createElement('button');b.className='pchip';b.dataset.key=e.key;b.innerHTML=`${e.icon} ${e.label}`;
+  b.onclick=()=>{b.classList.toggle('on');selEquip=[...equipWrap.querySelectorAll('.pchip.on')].map(c=>c.dataset.key);};
+  equipWrap.appendChild(b);
 });
 
-/* ===== GUIDED TIMER ===== */
+let builtSession=null;
+const CHEV=`<svg class="phase-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>`;
+document.getElementById('buildBtn').onclick=()=>{
+  const mins=+slider.value;
+  builtSession=generateSession(mins, selFocus, selEquip);
+  const total=builtSession.reduce((s,p)=>s+p.secs,0);
+  const res=document.getElementById('buildResult');
+  res.innerHTML=`
+    <button class="start-btn" id="startBtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> Start Guided Session</button>
+    <div class="preview-head"><h3>Your session</h3><span class="ph-total">${fmtMin(total)} · ${builtSession.length} phases</span></div>
+    ${builtSession.map(ph=>`
+      <div class="phase"><div class="glass-sm phase-card">
+        <div class="phase-head"><span class="phase-time${ph.rest?' rest':''}">${fmtMin(ph.secs)}</span><span class="phase-name">${ph.name}</span>${CHEV}</div>
+        <div class="phase-body"><div class="phase-body-in">${ph.body?`<p>${ph.body}</p>`:''}${ph.pts&&ph.pts.length?`<ul>${ph.pts.map(p=>`<li>${p}</li>`).join('')}</ul>`:''}</div></div>
+      </div></div>`).join('')}
+    <div class="glass-sm section-pad" style="margin-top:6px;"><p class="principle"><b>Baked in:</b> quality over speed · right foot sharp, left foot fed · left = cut in / right = stay wide on wall reps · head up more as it goes. <b>Post-injury:</b> warm the ankle, extra reps weaker side, respect soreness.</p></div>
+    <div class="spacer"></div>`;
+  res.querySelectorAll('.phase-card').forEach(c=>c.querySelector('.phase-head').onclick=()=>c.classList.toggle('open'));
+  document.getElementById('startBtn').onclick=()=>startSession(builtSession);
+  res.scrollIntoView({behavior:'smooth',block:'start'});
+};
+
+/* =========================================================
+   SECTION 4 — GUIDED TIMER (+ lock-screen catch-up + notifications)
+   ========================================================= */
 const timerEl=document.getElementById('timer');
-let phases=[], idx=0, remaining=0, running=false, rafId=null, lastTick=0, wakeLock=null;
+let phases=[], idx=0, remaining=0, running=false, rafId=null, phaseEndsAt=0, wakeLock=null, notifyOK=false;
 function fmt(s){s=Math.max(0,Math.round(s));const m=Math.floor(s/60);const ss=s%60;return `${String(m).padStart(2,'0')}:${String(ss).padStart(2,'0')}`;}
 function beep(rest){
   try{const ctx=new (window.AudioContext||window.webkitAudioContext)();const o=ctx.createOscillator();const g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.frequency.value=rest?520:780;g.gain.setValueAtTime(0.001,ctx.currentTime);g.gain.exponentialRampToValueAtTime(0.3,ctx.currentTime+0.02);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.5);o.start();o.stop(ctx.currentTime+0.5);}catch(e){}
   if(navigator.vibrate)navigator.vibrate(rest?[120,60,120]:[200]);
 }
+function notify(title,bodyTxt){
+  if(!notifyOK)return;
+  try{new Notification(title,{body:bodyTxt,icon:'icon.svg',tag:'gaffer-phase',renotify:true});}catch(e){}
+}
 async function reqWake(){try{if('wakeLock' in navigator)wakeLock=await navigator.wakeLock.request('screen');}catch(e){}}
 function relWake(){try{if(wakeLock){wakeLock.release();wakeLock=null;}}catch(e){}}
-function startSession(){
-  phases=SESSIONS[currentDay];idx=0;remaining=phases[0].secs;running=true;
+async function startSession(sess){
+  phases=sess;idx=0;remaining=phases[0].secs;running=true;phaseEndsAt=Date.now()+remaining*1000;
   document.getElementById('timerRunning').style.display='';
   document.getElementById('timerFinished').style.display='none';
   timerEl.classList.add('active');
+  if('Notification' in window && Notification.permission==='default'){try{const p=await Notification.requestPermission();notifyOK=(p==='granted');}catch(e){}}
+  else if('Notification' in window){notifyOK=(Notification.permission==='granted');}
   reqWake();renderPhase();loop();
 }
 function renderPhase(){
   const p=phases[idx];
   timerEl.classList.toggle('rest-mode',!!p.rest);
   document.getElementById('timerKicker').textContent=p.rest?'Rest':`Phase ${idx+1}`;
-  document.getElementById('timerPhase').textContent=p.n;
-  document.getElementById('timerPhaseCount').textContent=`${idx+1} of ${phases.length} · ${p.t}`;
+  document.getElementById('timerPhase').textContent=p.name;
+  document.getElementById('timerPhaseCount').textContent=`${idx+1} of ${phases.length} · ${fmtMin(p.secs)}`;
   const nx=phases[idx+1];
-  document.getElementById('timerNext').innerHTML=nx?`Up next: <b>${nx.n}</b>`:`Last phase — finish strong.`;
+  document.getElementById('timerNext').innerHTML=nx?`Up next: <b>${nx.name}</b>`:`Last phase — finish strong.`;
   updateCount();
 }
 function updateCount(){
@@ -396,69 +664,159 @@ function updateCount(){
   document.getElementById('tcPlayIcon').innerHTML=running?'<path d="M6 19h4V5H6zm8-14v14h4V5z"/>':'<path d="M8 5v14l11-7z"/>';
 }
 function loop(){
-  cancelAnimationFrame(rafId);lastTick=performance.now();
-  function step(now){
+  cancelAnimationFrame(rafId);
+  function step(){
     if(!running)return;
-    const dt=(now-lastTick)/1000;lastTick=now;remaining-=dt;
-    if(remaining<=0){beep(phases[idx].rest);nextPhase(true);return;}
+    remaining=(phaseEndsAt-Date.now())/1000;   // timestamp-based: accurate even after lock
+    if(remaining<=0){advance(true);return;}
     updateCount();rafId=requestAnimationFrame(step);
   }
   rafId=requestAnimationFrame(step);
 }
-function nextPhase(auto){
-  if(idx<phases.length-1){idx++;remaining=phases[idx].secs;renderPhase();if(running)loop();}
-  else{finishSession();}
+function advance(auto){
+  if(idx<phases.length-1){
+    idx++;remaining=phases[idx].secs;phaseEndsAt=Date.now()+remaining*1000;
+    if(auto){beep(phases[idx].rest);notify(phases[idx].rest?'Rest time':'Next phase',phases[idx].name);}
+    renderPhase();if(running)loop();
+  }else{finishSession();}
 }
-function prevPhase(){idx=Math.max(0,idx-1);remaining=phases[idx].secs;renderPhase();if(running)loop();}
-function togglePlay(){running=!running;updateCount();if(running){loop();reqWake();}else{cancelAnimationFrame(rafId);relWake();}}
-function finishSession(){running=false;cancelAnimationFrame(rafId);relWake();document.getElementById('timerRunning').style.display='none';document.getElementById('timerFinished').style.display='';beep(false);}
+function prevPhase(){idx=Math.max(0,idx-1);remaining=phases[idx].secs;phaseEndsAt=Date.now()+remaining*1000;renderPhase();if(running)loop();}
+function togglePlay(){
+  running=!running;
+  if(running){phaseEndsAt=Date.now()+remaining*1000;loop();reqWake();}
+  else{cancelAnimationFrame(rafId);relWake();}
+  updateCount();
+}
+function finishSession(){running=false;cancelAnimationFrame(rafId);relWake();document.getElementById('timerRunning').style.display='none';document.getElementById('timerFinished').style.display='';beep(false);notify('Session complete','Well trained. 👏');}
 function closeTimer(){running=false;cancelAnimationFrame(rafId);relWake();timerEl.classList.remove('active');}
-document.getElementById('startBtn').onclick=startSession;
 document.getElementById('tcPlay').onclick=togglePlay;
-document.getElementById('tcSkip').onclick=()=>nextPhase(false);
+document.getElementById('tcSkip').onclick=()=>advance(false);
 document.getElementById('tcBack').onclick=prevPhase;
 document.getElementById('timerClose').onclick=closeTimer;
 document.getElementById('tcFinishClose').onclick=closeTimer;
-// keep accurate if tab is backgrounded then refocused
-document.addEventListener('visibilitychange',()=>{if(!document.hidden&&running){lastTick=performance.now();if(wakeLock===null)reqWake();}});
+// lock-screen catch-up: on refocus, recompute + fire any phase changes missed while away
+document.addEventListener('visibilitychange',()=>{
+  if(document.hidden||!running)return;
+  reqWake();
+  let guard=0;
+  while(running && Date.now()>=phaseEndsAt && idx<phases.length-1 && guard<50){advance(true);guard++;}
+  if(running && Date.now()>=phaseEndsAt && idx===phases.length-1) finishSession();
+  else updateCount();
+});
 
-/* ===== TIPS ===== */
+/* =========================================================
+   SECTION 5 — NOTES (expanded types, tally, edit + delete)
+   ========================================================= */
+const NOTE_TYPES=[
+  {key:'goal',label:'Open-play goal',color:'#1a5336'},
+  {key:'penalty',label:'Penalty',color:'#d4a017'},
+  {key:'freekick',label:'Free-kick goal',color:'#f4b400'},
+  {key:'assist',label:'Assist',color:'#2a9d8f'},
+  {key:'save',label:'Save',color:'#3a7bd5'},
+  {key:'tackle',label:'Tackle',color:'#4a6572'},
+  {key:'block',label:'Block',color:'#5a7d8c'},
+  {key:'clearance',label:'Clearance',color:'#607d8b'},
+  {key:'interception',label:'Interception',color:'#546e7a'},
+  {key:'skill',label:'Skill move',color:'#8e44ad'},
+  {key:'nutmeg',label:'Nutmeg',color:'#9b59b6'},
+  {key:'dribble',label:'Dribble past',color:'#a569bd'},
+  {key:'match',label:'Match note',color:'#e67e22'},
+  {key:'pb',label:'Personal best',color:'#c6f24e',dark:true},
+  {key:'note',label:'Note',color:'#6b7d73'}
+];
+const TYPE_MAP={};NOTE_TYPES.forEach(t=>TYPE_MAP[t.key]=t);
+const noteSel=document.getElementById('noteType');
+noteSel.innerHTML=NOTE_TYPES.map(t=>`<option value="${t.key}">${t.label}</option>`).join('');
+
+const NKEY='gafferNotes_v2';   // v2: no seed, new types
+function loadNotes(){try{return JSON.parse(localStorage.getItem(NKEY))||[];}catch(e){return [];}}
+function saveNotes(){try{localStorage.setItem(NKEY,JSON.stringify(notes));}catch(e){}}
+let notes=loadNotes();
+let editingIdx=null;
+function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function renderTally(){
+  const wrap=document.getElementById('tally');
+  if(!notes.length){wrap.innerHTML='';return;}
+  const counts={};notes.forEach(n=>counts[n.type]=(counts[n.type]||0)+1);
+  wrap.innerHTML=Object.entries(counts).sort((a,b)=>b[1]-a[1]).map(([k,c])=>`<span class="tally-chip">${c} ${TYPE_MAP[k]?TYPE_MAP[k].label.toLowerCase():k}${c>1?'s':''}</span>`).join('');
+}
+function renderNotes(){
+  renderTally();
+  const list=document.getElementById('notesList');
+  if(!notes.length){list.innerHTML='<div class="glass section-pad empty">No entries yet. Log your next goal, free kick, or save above — it\'ll appear here.</div>';return;}
+  list.innerHTML=notes.map((n,i)=>{
+    const t=TYPE_MAP[n.type]||{label:'Note',color:'#6b7d73'};
+    const style=`background:${t.color};${t.dark?'color:#0f3a24;':''}`;
+    return `<div class="glass-sm note-item">
+      <div class="note-actions"><button class="note-act edit" data-i="${i}" title="Edit">✎</button><button class="note-act del" data-i="${i}" title="Delete">✕</button></div>
+      <div class="ni-top"><div class="ni-left"><span class="note-tag" style="${style}">${t.label}</span><span class="note-date">${n.date}</span></div></div>
+      <h4 style="font-size:1rem;font-weight:700;color:var(--turf-deep);margin-bottom:4px;">${esc(n.title)}</h4>
+      <p class="note-body">${esc(n.body)}</p></div>`;
+  }).join('');
+  list.querySelectorAll('.note-act.del').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;if(confirm('Delete this entry?')){notes.splice(i,1);saveNotes();renderNotes();}});
+  list.querySelectorAll('.note-act.edit').forEach(b=>b.onclick=()=>startEdit(+b.dataset.i));
+}
+function startEdit(i){
+  const n=notes[i];editingIdx=i;
+  noteSel.value=n.type;document.getElementById('noteTitle').value=n.title;document.getElementById('noteBody').value=n.body;
+  document.getElementById('btnAddNote').textContent='Save changes';
+  document.getElementById('btnCancelEdit').style.display='';
+  document.getElementById('page-notes').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function resetForm(){
+  editingIdx=null;document.getElementById('noteTitle').value='';document.getElementById('noteBody').value='';noteSel.selectedIndex=0;
+  document.getElementById('btnAddNote').textContent='Add to log';
+  document.getElementById('btnCancelEdit').style.display='none';
+}
+document.getElementById('btnAddNote').onclick=()=>{
+  const type=noteSel.value,title=document.getElementById('noteTitle').value.trim(),body=document.getElementById('noteBody').value.trim();
+  if(!title&&!body){alert('Add a title or some detail first.');return;}
+  if(editingIdx!==null){notes[editingIdx]={...notes[editingIdx],type,title,body};}
+  else{notes.unshift({type,title,body,date:new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})});}
+  saveNotes();renderNotes();resetForm();
+};
+document.getElementById('btnCancelEdit').onclick=resetForm;
+renderNotes();
+
+/* =========================================================
+   TIPS (unchanged from v1.1)
+   ========================================================= */
 const TIPS=[
   {icon:'🎯',name:'Free Kicks & Set Pieces',tips:[
-    {h:'Your two weapons',mine:true,p:'You\'ve got the driven top-corner rocket AND the whipped near-post curler. Keep both — a keeper can\'t set for both. Disguise your run-up so they look identical.'},
-    {h:'The knuckleball',p:'Strike through the centre with the top of your laces, minimal spin, firm plant foot. It dips and wobbles late.'},
-    {h:'The curler',p:'Hit across the ball with your instep, follow through across your body. Over the wall, bending into the corner.'},
-    {h:'Near vs far post',mine:true,p:'From a wide-left spot you beat the keeper near post because he expects the far-post curl. Mix it so he can\'t cheat.'}
+    {h:'Your two weapons',mine:true,p:'Driven top-corner rocket AND whipped near-post curler. Disguise the run-up so a keeper can\'t set for both.'},
+    {h:'The knuckleball',p:'Strike through the centre, top of the laces, minimal spin, firm plant foot. Dips late.'},
+    {h:'The curler',p:'Across the ball with the instep, follow through across your body, over the wall into the corner.'},
+    {h:'Near vs far post',mine:true,p:'From wide-left you beat the keeper near post because he expects the far-post curl. Mix it.'}
   ]},
   {icon:'⚡',name:'Skill Moves & Dribbling',tips:[
-    {h:'The cut-inside (your bread & butter)',mine:true,p:'From the left, chop with the inside of your right foot across your body to open the shot or through-ball. Sell it with a shoulder drop.'},
-    {h:'Stepover into push',p:'Stepover to freeze the defender, push the ball the other way with the outside of your foot, accelerate.'},
-    {h:'La Croqueta',p:'Quick shift from one foot to the other in tight space — slip between two defenders.'},
-    {h:'Close control base',p:'Keep the ball within one step at pace. The best dribblers touch it more often, not less.'}
+    {h:'The cut-inside',mine:true,p:'From the left, chop with the inside of your right foot across your body. Shoulder-drop to sell it.'},
+    {h:'Stepover into push',p:'Freeze the defender, push the ball the other way with the outside of the foot, accelerate.'},
+    {h:'La Croqueta',p:'Quick shift one foot to the other in tight space — slip between two defenders.'},
+    {h:'Close control base',p:'Ball within one step at pace. Best dribblers touch it more, not less.'}
   ]},
   {icon:'🥅',name:'Shooting & Finishing',tips:[
-    {h:'Placement over power',p:'Side-foot into the corner beats blasting. Open the hips, pick your spot, pass it in.'},
+    {h:'Placement over power',p:'Side-foot into the corner beats blasting. Open hips, pick your spot.'},
     {h:'First-time finishing',p:'Meet it early before the keeper sets. Body over it to keep it down.'},
-    {h:'Cutting in to shoot',mine:true,p:'From the left, your natural finish is the curl to the far top corner off your right. Drill it till automatic.'},
-    {h:'The dink',p:'When the keeper commits and rushes, a soft chip is higher-percentage than squeezing it past.'}
+    {h:'Cutting in to shoot',mine:true,p:'From the left, curl to the far top corner off your right. Drill it till automatic.'},
+    {h:'The dink',p:'When the keeper commits and rushes, a soft chip beats squeezing it past.'}
   ]},
   {icon:'🎨',name:'Passing & Creating',tips:[
-    {h:'Receive on the half-turn',p:'Open your body as the ball arrives, back-foot touch. Biggest upgrade to your link play.'},
+    {h:'Receive on the half-turn',p:'Open your body as it arrives, back-foot touch. Biggest upgrade to your link play.'},
     {h:'Disguise the pass',p:'Look one way, play the other. A glance shifts a defender\'s weight.'},
-    {h:'Weight & timing',p:'A pass ahead into space beats one to feet when your runner is moving. Lead them.'},
-    {h:'The cutback',mine:true,p:'From the right byline, pull it back to the penalty spot — the highest-value assist in football.'}
+    {h:'Weight & timing',p:'A pass ahead into space beats one to feet when the runner\'s moving.'},
+    {h:'The cutback',mine:true,p:'From the right byline, pull it back to the penalty spot — highest-value assist in football.'}
   ]},
   {icon:'🛡️',name:'Defending & Off-Ball',tips:[
     {h:'Jockey, don\'t dive in',p:'Stay on your feet, show him wide/onto his weak foot, wait for the mistake.'},
-    {h:'Track back as a winger',mine:true,p:'Recover goal-side of your winger, don\'t ball-watch — the assist you stop is as good as one you make.'},
-    {h:'Body between ball & man',p:'Angle your body to shepherd, not square-on where they go either side.'},
-    {h:'Press triggers',p:'Press on a poor first touch, a backwards pass, or a player facing his own goal.'}
+    {h:'Track back as a winger',mine:true,p:'Recover goal-side of your winger. The assist you stop is as good as one you make.'},
+    {h:'Body between ball & man',p:'Angle to shepherd, not square-on.'},
+    {h:'Press triggers',p:'Press on a poor touch, a backwards pass, or a player facing his own goal.'}
   ]},
   {icon:'🧠',name:'Positioning & Game Sense',tips:[
-    {h:'Any-flank versatility',mine:true,p:'Your edge is two jobs: wide threat right, cut-in creator left. Learn both flanks\' spacing cold.'},
-    {h:'Scan before you receive',p:'Check your shoulder twice before the ball arrives. Know your next move before your first touch.'},
-    {h:'Stay high & wide in build-up',p:'Hold width to stretch the pitch — it creates the gap you\'ll cut into.'},
-    {h:'Arrive, don\'t camp',p:'Time runs into the box late so you arrive behind defenders, not offside or marked.'}
+    {h:'Any-flank versatility',mine:true,p:'Two jobs: wide threat right, cut-in creator left. Learn both flanks\' spacing cold.'},
+    {h:'Scan before you receive',p:'Check your shoulder twice before the ball arrives.'},
+    {h:'Stay high & wide in build-up',p:'Hold width to stretch the pitch — creates the gap you cut into.'},
+    {h:'Arrive, don\'t camp',p:'Time runs into the box late so you arrive behind defenders.'}
   ]}
 ];
 const TCHEV=`<svg class="tipcat-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>`;
@@ -467,58 +825,35 @@ document.getElementById('tipsList').innerHTML=TIPS.map(cat=>`
   <div class="tipcat-body"><div class="tipcat-body-in">${cat.tips.map(t=>`<div class="tip"><h4>${t.h}${t.mine?'<span class="mine">For you</span>':''}</h4><p>${t.p}</p></div>`).join('')}</div></div></div>`).join('');
 document.querySelectorAll('.tipcat').forEach(c=>c.querySelector('.tipcat-head').onclick=()=>c.classList.toggle('open'));
 
-/* ===== NOTES ===== */
-const NKEY='gafferNotes_v1';
-const SEED=[
-  {type:'freekick',title:'Whipped near-post curler',body:'Near the left corner of the box, tight angle. Loads of curl — up and over the wall, bending into the near post. Keeper helpless, blamed his wall even though it went too high for them.',date:'6 Aug 2026'},
-  {type:'freekick',title:'Driven top-corner rocket',body:'Just outside the D, angled slightly left. Went for power instead of finesse — struck with only finesse-level power but the leg strength did the rest. Dead straight, no curl, top right. Keeper got fingertips but it slipped in.',date:'5 Aug 2026'}
-];
-function loadNotes(){try{const v=JSON.parse(localStorage.getItem(NKEY));return v||SEED.slice();}catch(e){return SEED.slice();}}
-function saveNotes(){try{localStorage.setItem(NKEY,JSON.stringify(notes));}catch(e){}}
-let notes=loadNotes();
-const TYPE_LABEL={freekick:'Free kick',goal:'Goal',match:'Match',pb:'PB',note:'Note'};
-function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-function renderNotes(){
-  const list=document.getElementById('notesList');
-  if(!notes.length){list.innerHTML='<div class="glass section-pad empty">No entries yet. Log your next goal or free kick above.</div>';return;}
-  list.innerHTML=notes.map((n,i)=>`<div class="glass-sm note-item"><button class="note-del" data-i="${i}">✕</button><div class="ni-top"><span class="note-tag ${n.type}">${TYPE_LABEL[n.type]||'Note'}</span><span class="note-date">${n.date}</span></div><h4 style="font-size:1rem;font-weight:700;color:var(--turf-deep);margin-bottom:4px;">${esc(n.title||'')}</h4><p class="note-body">${esc(n.body||'')}</p></div>`).join('');
-  list.querySelectorAll('.note-del').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;if(confirm('Delete this entry?')){notes.splice(i,1);saveNotes();renderNotes();}});
-}
-document.getElementById('btnAddNote').onclick=()=>{
-  const type=document.getElementById('noteType').value,title=document.getElementById('noteTitle').value.trim(),body=document.getElementById('noteBody').value.trim();
-  if(!title&&!body){alert('Add a title or some detail first.');return;}
-  notes.unshift({type,title,body,date:new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})});
-  saveNotes();renderNotes();document.getElementById('noteTitle').value='';document.getElementById('noteBody').value='';
-};
-renderNotes();
-
-/* ===== TRACKER ===== */
+/* =========================================================
+   TRACKER (unchanged)
+   ========================================================= */
 const TKEY='gafferTracker_v1';
 let done=(()=>{try{return JSON.parse(localStorage.getItem(TKEY))||[];}catch(e){return[];}})();
 function saveDone(){try{localStorage.setItem(TKEY,JSON.stringify(done));}catch(e){}}
 const grid=document.getElementById('grid');
 function buildGrid(){grid.innerHTML='';for(let i=1;i<=28;i++){const c=document.createElement('div');c.className='cell'+(done.includes(i)?' done':'');c.textContent=i;c.setAttribute('role','button');c.tabIndex=0;const tog=()=>{done.includes(i)?done=done.filter(x=>x!==i):done.push(i);saveDone();c.classList.toggle('done');stats();};c.onclick=tog;c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tog();}};grid.appendChild(c);}}
-function animate(el,to){const from=+el.textContent||0;if(from===to)return;const t0=performance.now();(function s(t){const p=Math.min((t-t0)/350,1);el.textContent=Math.round(from+(to-from)*p);if(p<1)requestAnimationFrame(s);})(performance.now());}
-function stats(){const sorted=[...done].sort((a,b)=>a-b);let best=0,run=0,prev=null;sorted.forEach(n=>{if(prev!==null&&n===prev+1)run++;else run=1;best=Math.max(best,run);prev=n;});let cur=0;if(sorted.length){let d=sorted[sorted.length-1];while(done.includes(d)){cur++;d--;}}animate(document.getElementById('totalDays'),done.length);animate(document.getElementById('bestStreak'),best);animate(document.getElementById('curStreak'),cur);}
+function anim(el,to){const from=+el.textContent||0;if(from===to)return;const t0=performance.now();(function s(t){const p=Math.min((t-t0)/350,1);el.textContent=Math.round(from+(to-from)*p);if(p<1)requestAnimationFrame(s);})(performance.now());}
+function stats(){const sorted=[...done].sort((a,b)=>a-b);let best=0,run=0,prev=null;sorted.forEach(n=>{if(prev!==null&&n===prev+1)run++;else run=1;best=Math.max(best,run);prev=n;});let cur=0;if(sorted.length){let d=sorted[sorted.length-1];while(done.includes(d)){cur++;d--;}}anim(document.getElementById('totalDays'),done.length);anim(document.getElementById('bestStreak'),best);anim(document.getElementById('curStreak'),cur);}
 document.getElementById('btnReset').onclick=()=>{if(confirm('Reset the tracker?')){done=[];saveDone();buildGrid();stats();}};
 buildGrid();stats();
 
-/* ===== TABS ===== */
-const pages={sessions:'page-sessions',notes:'page-notes',tips:'page-tips',tracker:'page-tracker'};
+/* =========================================================
+   TABS + REVEAL + PARALLAX + PWA
+   ========================================================= */
+const pages={build:'page-build',notes:'page-notes',tips:'page-tips',tracker:'page-tracker'};
 const tabbar=document.getElementById('tabbar'),indicator=document.getElementById('tabIndicator');
 function moveIndicator(btn){const bar=tabbar.getBoundingClientRect(),r=btn.getBoundingClientRect();indicator.style.width=r.width+'px';indicator.style.transform=`translateX(${r.left-bar.left-tabbar.clientLeft}px)`;}
 document.querySelectorAll('.tabbtn').forEach(btn=>{btn.onclick=()=>{const tab=btn.dataset.tab;document.querySelectorAll('.tabbtn').forEach(b=>b.classList.toggle('active',b===btn));moveIndicator(btn);Object.entries(pages).forEach(([k,id])=>document.getElementById(id).classList.toggle('active',k===tab));window.scrollTo({top:0,behavior:'smooth'});setTimeout(runReveal,60);};});
 function initIndicator(){moveIndicator(document.querySelector('.tabbtn.active'));}
 window.addEventListener('load',initIndicator);window.addEventListener('resize',initIndicator);initIndicator();
 
-/* ===== REVEAL + PARALLAX ===== */
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1});
 function runReveal(){document.querySelectorAll('.page.active .reveal:not(.in)').forEach(el=>io.observe(el));}
 runReveal();
 let ticking=false;
 window.addEventListener('scroll',()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{document.getElementById('bg').style.transform=`translateY(${window.scrollY*0.15}px)`;ticking=false;});},{passive:true});
 
-/* ===== PWA ===== */
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));}
 let dp=null;const ib=document.getElementById('installBtn');
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e;ib.style.display='inline-block';});
