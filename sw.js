@@ -1,29 +1,14 @@
-// The Gaffer — service worker v1.1 (renamed file forces the old worker out)
-const CACHE_NAME = 'gaffer-v4';
-const ASSETS = ['./', './index.html', './manifest.json', './icon.svg'];
-
-self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS)));
-  self.skipWaiting();
-});
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k)))
-    )
-  );
-  self.clients.claim();
-});
-self.addEventListener('fetch', (event) => {
-  if (event.request.method !== 'GET') return;
-  event.respondWith(
-    caches.match(event.request).then((cached) =>
-      cached ||
-      fetch(event.request).then((resp) => {
-        const copy = resp.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
-        return resp;
-      }).catch(() => cached)
-    )
-  );
-});
+{
+  "name": "The Gaffer — Football Companion",
+  "short_name": "Gaffer",
+  "description": "Weekend training sessions with a guided timer, a notes journal, coaching tips, and a streak tracker.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f3a24",
+  "theme_color": "#0f3a24",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
